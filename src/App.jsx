@@ -27,7 +27,7 @@ const PROJECTS = [
     name: "FUSION Motion-Controlled Rover",
     desc: "Co-led a team of 8 to build a motion-controlled rover with embedded control systems, integrating flex sensors and a gyroscope with an Arduino for sensor-driven robotic movement.",
     tags: ["C/C++", "Arduino", "Embedded Systems", "Sensors"],
-    url: "https://github.com/isaac-rico",
+    url: "https://github.com/isaac-rico/Mano-Po-FEP-2024",
   },
 ];
 
@@ -110,21 +110,7 @@ export default function App() {
             <div style={{ paddingTop: "5rem", paddingBottom: "5rem" }}>
               <p style={{ ...sectionLabel, marginBottom: "1.5rem" }}>Hello! I'm</p>
               <h1 style={{ fontFamily: "'Lora', serif", fontSize: "clamp(3rem, 7vw, 5rem)", fontWeight: 400, lineHeight: 1.05, letterSpacing: "-0.03em", marginBottom: "2rem", color: c.text }}>
-                {/* <SplitText
-                    text="Isaac Rico"
-                    className="text-2xl font-semibold text-center"
-                    delay={50}
-                    duration={1.25}
-                    ease="power3.out"
-                    splitType="chars"
-                    from={{ opacity: 0, y: 40 }}
-                    to={{ opacity: 1, y: 0 }}
-                    threshold={0.1}
-                    rootMargin="-100px"
-                    textAlign="center"
-                    onLetterAnimationComplete={handleAnimationComplete}
-                    showCallback
-                /> */} Isaac Rico
+                Isaac Rico
               </h1>
               <p style={{ fontSize: "0.82rem", color: c.textMuted, lineHeight: 1.9, maxWidth: 480, marginBottom: "3rem" }}>
                 Data and reliability analyst with experience building executive-facing dashboards and analytics
@@ -268,7 +254,7 @@ export default function App() {
         </main>
 
         <footer style={{ padding: "1.25rem 3rem", borderTop: `0.5px solid ${c.border}`, textAlign: "center", fontSize: "0.65rem", color: c.footerText, letterSpacing: "0.05em" }}>
-          © {new Date().getFullYear()} Isaac Rico — Built with React
+          © {new Date().getFullYear()} Isaac Rico
         </footer>
       </div>
     </>
