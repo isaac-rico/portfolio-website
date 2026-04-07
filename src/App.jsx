@@ -82,9 +82,6 @@ export default function App() {
 
         {/* NAV */}
         <nav style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "1.4rem 3rem", borderBottom: `0.5px solid ${c.border}`, position: "sticky", top: 0, background: c.bg, zIndex: 10, transition: "background 0.25s" }}>
-          <button onClick={() => setPage("Home")} style={{ fontFamily: "'Lora', serif", fontSize: "1rem", fontWeight: 500, letterSpacing: "-0.02em", color: c.text }}>
-            Isaac Rico
-          </button>
           <div style={{ display: "flex", gap: "2rem", alignItems: "center" }}>
             {NAV.map(n => (
               <button key={n} onClick={() => setPage(n)} style={{ fontSize: "0.68rem", letterSpacing: "0.12em", textTransform: "uppercase", color: page === n ? c.navActive : c.textFaint, transition: "color 0.2s" }}>
