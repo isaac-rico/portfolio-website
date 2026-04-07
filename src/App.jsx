@@ -13,7 +13,7 @@ const PROJECTS = [
   
   {
     name: "Olist E-Commerce Analysis",
-    desc: "End-to-end e-commerce analytics pipeline using dbt, Snowflake, and Apache Superset",
+    desc: "End-to-end data analytics pipeline of data from the Olist Brazilian e-commerce platform (2017–2018) using dbt, Snowflake, and Apache Superset",
     tags: ["dbt", "Snowflake", "SQL", "Apache Superset", "Business Intelligence"],
     url: "https://github.com/isaac-rico/Analytics-Portfolio/tree/602d6f3a511b834cce194507352c14867a8e8115/E-Commerce%20Analysis",
   },
@@ -140,9 +140,9 @@ export default function App() {
           {page === "Projects" && (
             <div style={{ paddingTop: "4rem", paddingBottom: "5rem" }}>
               <p style={sectionLabel}>Work</p>
-              <h2 style={{ fontFamily: "'Lora', serif", fontSize: "2.5rem", fontWeight: 400, letterSpacing: "-0.02em", marginBottom: "0.75rem", color: c.text }}>GitHub Projects</h2>
+              <h2 style={{ fontFamily: "'Lora', serif", fontSize: "2.5rem", fontWeight: 400, letterSpacing: "-0.02em", marginBottom: "0.75rem", color: c.text }}>Projects</h2>
               <p style={{ fontSize: "0.8rem", color: c.textFaint, marginBottom: "3rem" }}>
-                A selection of personal and open-source projects. Full list on{" "}
+                A selection of personal, school, and open-source projects. Full list on{" "}
                 <a href="https://github.com/isaac-rico" target="_blank" rel="noreferrer" style={{ color: c.accent, textDecoration: "underline" }}>GitHub ↗</a>
               </p>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "1px", background: c.border, border: `0.5px solid ${c.border}` }}>
@@ -231,7 +231,7 @@ export default function App() {
                   { label: "Email", value: "isaacarnell.rico@gmail.com", href: "mailto:isaacarnell.rico@gmail.com" },
                   { label: "LinkedIn", value: "linkedin.com/in/isaac-rico", href: "https://linkedin.com/in/isaac-a-rico" },
                   { label: "GitHub", value: "github.com/isaac-rico", href: "https://github.com/isaac-rico" },
-                  { label: "Location", value: "Rohnert Park, CA", href: null },
+                  { label: "Location", value: "California, USA", href: null },
                 ].map(item => (
                   <div
                     key={item.label}
