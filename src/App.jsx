@@ -168,7 +168,9 @@ export default function App() {
                   }}>
                     Data and reliability analyst with experience building executive-facing dashboards and analytics
                     solutions for pharmaceutical manufacturing. Skilled in SQL, Python, machine learning, and data
-                    visualization — translating operational data into insights that drive decisions.
+                    visualization, translating operational data into insights that drive decisions. 
+                    <br /><br />
+                    Also a music enthusiast, guitarist, skilled barista, avid gamer, and a hardcore Bay Area sports fan :)
                   </p>
                 </div>
                 
