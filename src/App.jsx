@@ -81,8 +81,19 @@ export default function App() {
                   }}>
 
         {/* NAV */}
-        <nav style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "1.4rem 3rem", borderBottom: `0.5px solid ${c.border}`, position: "sticky", top: 0, background: c.bg, zIndex: 10, transition: "background 0.25s" }}>
-          <div style={{ display: "flex", gap: "2rem", alignItems: "center" }}>
+        <nav style={{ 
+          display: "flex", 
+          justifyContent: "space-between", 
+          alignItems: "center", 
+          padding: "1rem clamp(1.5rem, 5vw, 3rem)", 
+          borderBottom: `0.5px solid ${c.border}`, 
+          position: "sticky", 
+          top: 0, 
+          background: c.bg, 
+          zIndex: 10, 
+          transition: "background 0.25s" 
+        }}>
+          <div style={{ display: "flex", gap: "clamp(1rem, 3vw, 2rem)", alignItems: "center", flexWrap: "wrap" }}>
             {NAV.map(n => (
               <button key={n} onClick={() => setPage(n)} style={{ fontSize: "0.68rem", letterSpacing: "0.12em", textTransform: "uppercase", color: page === n ? c.navActive : c.textFaint, transition: "color 0.2s" }}>
                 {n}
@@ -104,16 +115,64 @@ export default function App() {
 
           {/* HOME */}
           {page === "Home" && (
-            <div style={{ paddingTop: "5rem", paddingBottom: "5rem" }}>
-              <p style={{ ...sectionLabel, marginBottom: "1.5rem" }}>Hello! I'm</p>
-              <h1 style={{ fontFamily: "'Lora', serif", fontSize: "clamp(3rem, 7vw, 5rem)", fontWeight: 400, lineHeight: 1.05, letterSpacing: "-0.03em", marginBottom: "2rem", color: c.text }}>
-                Isaac Rico
-              </h1>
-              <p style={{ fontSize: "0.82rem", color: c.textMuted, lineHeight: 1.9, maxWidth: 480, marginBottom: "3rem" }}>
-                Data and reliability analyst with experience building executive-facing dashboards and analytics
-                solutions for pharmaceutical manufacturing. Skilled in SQL, Python, machine learning, and data
-                visualization — translating operational data into insights that drive decisions.
-              </p>
+            <div style={{ paddingTop: "clamp(2rem, 10vh, 5rem)", paddingBottom: "5rem" }}>
+
+              {/* Main Flex Wrapper */}
+              <div style={{ 
+                display: "flex", 
+                justifyContent: "space-between", 
+                alignItems: "center", 
+                flexWrap: "wrap-reverse", 
+                gap: "2rem", 
+                marginBottom: "2rem"
+              }}>
+
+                {/* text */}
+                <div style={{ flex: "1", minWidth: "300px" }}>
+                  <p style={{ ...sectionLabel, marginBottom: "1.5rem" }}>Hello! I'm</p>
+                  <h1 style={{ 
+                    fontFamily: "'Lora', serif", 
+                    fontSize: "clamp(3rem, 7vw, 5rem)", 
+                    fontWeight: 400, 
+                    lineHeight: 1.05, 
+                    letterSpacing: "-0.03em", 
+                    marginBottom: "2rem", 
+                    color: c.text 
+                  }}>
+                    Isaac Rico
+                  </h1>
+                  <p style={{ 
+                    fontSize: "0.9rem", 
+                    color: c.textMuted, 
+                    lineHeight: 1.9, 
+                    maxWidth: 480, 
+                    marginBottom: "3rem" 
+                  }}>
+                    Data and reliability analyst with experience building executive-facing dashboards and analytics
+                    solutions for pharmaceutical manufacturing. Skilled in SQL, Python, machine learning, and data
+                    visualization — translating operational data into insights that drive decisions.
+                  </p>
+                </div>
+                
+                {/* Picture */}
+                <div style={{ flexShrink: 0 }}>
+                  <img 
+                    src="profilepic.jpg" // Place your file in the /public folder and update this name
+                    alt="Isaac Rico"
+                    style={{
+                      width: "200px",
+                      height: "300px",
+                      // borderRadius: "50%",
+                      objectFit: "cover",
+                      border: `1px solid ${c.border}`,
+                      padding: "8px",
+                      background: c.bgCard
+                    }}
+                  />
+                </div>
+              </div>
+                  
+              {/* CTA Buttons */}
               <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
                 <button onClick={() => setPage("Projects")} style={{ fontSize: "0.72rem", letterSpacing: "0.08em", padding: "0.65rem 1.4rem", background: c.btnPrimaryBg, color: c.btnPrimaryText, border: `1px solid ${c.btnPrimaryBg}`, transition: "background 0.25s, color 0.25s" }}>
                   View Projects →
@@ -122,8 +181,10 @@ export default function App() {
                   Get in Touch
                 </button>
               </div>
+                  
+              {/* Stats Grid */}
               <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1px", background: c.border, border: `0.5px solid ${c.border}`, marginTop: "6rem", maxWidth: 480, transition: "background 0.25s" }}>
-                {[["2×", "BioMarin Internships"], ["4+", "Projects Shipped"], ["UCI", "Bachelor of Science in Computer Engineering"]].map(([n, l]) => (
+                {[["2×", " Intern @ BioMarin Pharmaceutical Inc."], ["4+", "Projects Completed"], ["UCI", "Bachelor of Science in Computer Engineering"]].map(([n, l]) => (
                   <div key={l} style={{ background: c.bgStat, padding: "1.25rem", transition: "background 0.25s" }}>
                     <div style={{ fontFamily: "'Lora', serif", fontSize: "1.8rem", fontWeight: 400, marginBottom: "0.25rem", color: c.text }}>{n}</div>
                     <div style={{ fontSize: "0.65rem", color: c.textFaint, letterSpacing: "0.05em" }}>{l}</div>
@@ -142,7 +203,7 @@ export default function App() {
                 A selection of personal, school, and open-source projects. Full list on{" "}
                 <a href="https://github.com/isaac-rico" target="_blank" rel="noreferrer" style={{ color: c.accent, textDecoration: "underline" }}>GitHub ↗</a>
               </p>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "1px", background: c.border, border: `0.5px solid ${c.border}` }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1px", background: c.border, border: `0.5px solid ${c.border}` }}>
                 {PROJECTS.map(p => (
                   <div key={p.name} style={{ background: c.bgCard, padding: "1.75rem", display: "flex", flexDirection: "column", transition: "background 0.25s" }}>
                     <div style={{ fontFamily: "'Lora', serif", fontSize: "1.05rem", fontWeight: 500, marginBottom: "0.6rem", color: c.text }}>{p.name}</div>
