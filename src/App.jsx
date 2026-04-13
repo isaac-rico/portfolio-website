@@ -22,7 +22,7 @@ const PROJECTS = [
     name: "MockingBird Robotic Hand",
     desc: "Gesture-controlled robotic hand using a Raspberry Pi, PCA9685 servo controller, and real-time computer vision to replicate human hand movements via finger-angle socket transmission.",
     tags: ["Python", "MediaPipe", "OpenCV", "Raspberry Pi"],
-    url: "https://github.com/isaac-rico",
+    url: "https://github.com/isaac-rico/MockingBird",
   },
   {
     name: "FUSION Motion-Controlled Rover",
