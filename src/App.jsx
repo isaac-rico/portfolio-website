@@ -201,25 +201,6 @@ export default function App() {
                   Get in Touch
                 </button>
               </div>
-                  
-              {/* Stats Grid */}
-              <div style={{ 
-                display: "grid", 
-                gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr)", 
-                gap: "1px", 
-                background: c.border, 
-                border: `0.5px solid ${c.border}`, 
-                marginTop: "6rem", 
-                maxWidth: 480, 
-                transition: "background 0.25s" 
-              }}>
-                {[["2×", " Intern @ BioMarin Pharmaceutical Inc."], ["4+", "Projects Completed"], ["UCI", "Bachelor of Science in Computer Engineering"]].map(([n, l]) => (
-                  <div key={l} style={{ background: c.bgStat, padding: "1.25rem", transition: "background 0.25s" }}>
-                    <div style={{ fontFamily: "'Lora', serif", fontSize: "1.8rem", fontWeight: 400, marginBottom: "0.25rem", color: c.text }}>{n}</div>
-                    <div style={{ fontSize: "0.65rem", color: c.textFaint, letterSpacing: "0.05em" }}>{l}</div>
-                  </div>
-                ))}
-              </div>
             </div>
           )}
 
