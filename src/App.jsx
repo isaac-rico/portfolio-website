@@ -7,14 +7,14 @@ const NAV = ["Home", "Projects", "Resume", "Contact"];
 const PROJECTS = [
   {
     name: "Apple Product Sales Dashboard",
-    desc: "Interactive Apache Superset dashboard analyzing Apple product sales (2022–2024), with Linear Regression and Random Forest models to forecast revenue demand using pricing, discount, and customer rating features.",
+    desc: "Interactive Apache Superset dashboard analyzing Apple product sales (2022-2024), with Linear Regression and Random Forest models to forecast revenue demand using pricing, discount, and customer rating features.",
     tags: ["Apache Superset", "Python", "SQL", "Scikit-Learn"],
     url: "https://github.com/isaac-rico/Analytics-Portfolio/tree/9d2d4b412fdc9d0182377b0567f6053c43f7eaff/Apple-Product-Analysis",
   },
   
   {
     name: "Olist E-Commerce Analysis",
-    desc: "End-to-end data analytics pipeline of data from the Olist Brazilian e-commerce platform (2017–2018) using dbt, Snowflake, and Apache Superset",
+    desc: "End-to-end data analytics pipeline of data from the Olist Brazilian e-commerce platform (2017-2018) using dbt, Snowflake, and Apache Superset",
     tags: ["dbt", "Snowflake", "SQL", "Apache Superset", "Business Intelligence"],
     url: "https://github.com/isaac-rico/Analytics-Portfolio/tree/602d6f3a511b834cce194507352c14867a8e8115/E-Commerce%20Analysis",
   },
@@ -248,9 +248,9 @@ export default function App() {
               <div style={{ marginBottom: "3rem" }}>
                 <div style={divider}>Experience</div>
                 {[
-                  { title: "Reliability Engineering Intern", company: "BioMarin Pharmaceutical Inc.", date: "June 2025 – Sept 2025 · Novato, CA", desc: "Engineered executive-facing Power BI dashboards integrating CMMS maintenance and equipment data, enabling real-time visibility into reliability KPIs — improving operational efficiency by 75% and reducing leadership analysis time by 50%." },
-                  { title: "Asset Lifecycle Management Intern", company: "BioMarin Pharmaceutical Inc.", date: "June 2024 – Sept 2024 · Novato, CA", desc: "Developed a risk-based inventory analysis model using part turn-rate data and FMEA. Built a proof-of-concept NLP tool automating CMMS maintenance analysis and eliminating 25 hours of manual data entry per week." },
-                  { title: "Product Management Intern", company: "Yuba Bicycles", date: "Aug 2023 – Mar 2024 · Remote", desc: "Collaborated with cross-functional teams to build a web application automating compatibility checks, reducing service response time by 30%." },
+                  { title: "Reliability Engineering Intern", company: "BioMarin Pharmaceutical Inc.", date: "June 2025 - Sept 2025 · Novato, CA", desc: "Engineered executive-facing Power BI dashboards integrating CMMS maintenance and equipment data, enabling real-time visibility into reliability KPIs - improving operational efficiency by 75% and reducing leadership analysis time by 50%." },
+                  { title: "Asset Lifecycle Management Intern", company: "BioMarin Pharmaceutical Inc.", date: "June 2024 - Sept 2024 · Novato, CA", desc: "Developed a risk-based inventory analysis model using part turn-rate data and FMEA. Built a proof-of-concept NLP tool automating CMMS maintenance analysis and eliminating 25 hours of manual data entry per week." },
+                  { title: "Product Management Intern", company: "Yuba Bicycles", date: "Aug 2023 - Mar 2024 · Remote", desc: "Collaborated with cross-functional teams to build a web application automating compatibility checks, reducing service response time by 30%." },
                 ].map(e => (
                   <div key={e.title} style={{ marginBottom: "2rem" }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "0.2rem", flexWrap: "wrap", gap: "0.5rem" }}>
