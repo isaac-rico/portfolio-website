@@ -248,17 +248,39 @@ export default function App() {
               <div style={{ marginBottom: "3rem" }}>
                 <div style={divider}>Experience</div>
                 {[
-                  { title: "Reliability Engineering Intern", company: "BioMarin Pharmaceutical Inc.", date: "June 2025 – Sept 2025 · Novato, CA", desc: "Engineered executive-facing Power BI dashboards integrating CMMS maintenance and equipment data, enabling real-time visibility into reliability KPIs across maintenance backlog, inventory health, and equipment performance, improving operational efficiency by 75%.\nCollaborated closely with reliability engineers and maintenance teams to translate operational challenges into data-driven analytics solutions, reducing leadership analysis time by 50%." },
-                  { title: "Asset Lifecycle Management Intern", company: "BioMarin Pharmaceutical Inc.", date: "June 2024 – Sept 2024 · Novato, CA", desc: "Developed a risk‑based inventory analysis model using part turn‑rate data and Failure Modes and Effects Analysis (FMEA), to improve forecasting of critical spare parts and reduce excess inventory.\nPartnered with the data analysts to develop a proof-of-concept NLP tool that automated analysis of CMMS maintenance data, calculating system turn rates and Maintenance Repair Ratio (MRR) and eliminating 25 hours of manual data entry per week." },
-                  { title: "Product Management Intern", company: "Yuba Bicycles", date: "Aug 2023 – Mar 2024 · Remote", desc: "Identified a gap in cross-compatibility data for bicycle accessories, owned the product requirements process through structured stakeholder feedback, and maintained the product database with current CAD drawings, compatible accessories, and technical specifications to ensure alignment across teams.\nCollaborated with cross-functional teams across manufacturing and quality assurance to build a user-friendly accessory compatibility web application, cutting customer service response time by 30%." },
-                ].map(e => (
-                  <div key={e.title} style={{ marginBottom: "2rem" }}>
+                  { title: "Reliability Engineering Intern", 
+                    company: "BioMarin Pharmaceutical Inc.", 
+                    date: "June 2025 – Sept 2025 · Novato, CA", 
+                    desc: [
+                      "Engineered executive-facing Power BI dashboards integrating CMMS maintenance and equipment data, enabling real-time visibility into reliability KPIs across maintenance backlog, inventory health, and equipment performance, improving operational efficiency by 75%.", 
+                      "Collaborated closely with reliability engineers and maintenance teams to translate operational challenges into data-driven analytics solutions, reducing leadership analysis time by 50%." 
+                    ] },
+                  { title: "Asset Lifecycle Management Intern", 
+                    company: "BioMarin Pharmaceutical Inc.", 
+                    date: "June 2024 – Sept 2024 · Novato, CA", 
+                    desc: [
+                    "Developed a risk‑based inventory analysis model using part turn‑rate data and Failure Modes and Effects Analysis (FMEA), to improve forecasting of critical spare parts and reduce excess inventory.", 
+                    "Partnered with the data analysts to develop a proof-of-concept NLP tool that automated analysis of CMMS maintenance data, calculating system turn rates and Maintenance Repair Ratio (MRR) and eliminating 25 hours of manual data entry per week." 
+                    ] },
+                  { title: "Product Management Intern", 
+                    company: "Yuba Bicycles", 
+                    date: "Aug 2023 – Mar 2024 · Remote", 
+                    desc: [
+                    "Identified a gap in cross-compatibility data for bicycle accessories, owned the product requirements process through structured stakeholder feedback, and maintained the product database with current CAD drawings, compatible accessories, and technical specifications to ensure alignment across teams.",
+                    "Collaborated with cross-functional teams across manufacturing and quality assurance to build a user-friendly accessory compatibility web application, cutting customer service response time by 30%." 
+                    ] },
+                ].map((e, index) => (
+                  <div key={index} style={{ marginBottom: "2rem" }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "0.2rem", flexWrap: "wrap", gap: "0.5rem" }}>
                       <span style={{ fontFamily: "'Lora', serif", fontSize: "1rem", fontWeight: 500, color: c.text }}>{e.title}</span>
                       <span style={{ fontSize: "0.7rem", color: c.textFaint }}>{e.date}</span>
                     </div>
                     <div style={{ fontSize: "0.75rem", color: c.accent, marginBottom: "0.5rem" }}>{e.company}</div>
-                    <div style={{ fontSize: "0.78rem", color: c.textMuted, lineHeight: 1.75 }}>{e.desc}</div>
+                    <ul style={{ marginTop: '8px', paddingLeft: '20px' }}>
+                        {e.desc.map((bullet, bIndex) => (
+                          <li key={bIndex} style={{ fontSize: '0.78rem', color: c.textMuted, marginBottom: '4px' }}>{bullet}</li>
+                        ))}
+                    </ul>
                   </div>
                 ))}
               </div>
