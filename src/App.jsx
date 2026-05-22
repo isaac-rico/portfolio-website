@@ -19,6 +19,12 @@ const PROJECTS = [
     url: "https://github.com/isaac-rico/Analytics-Portfolio/tree/602d6f3a511b834cce194507352c14867a8e8115/E-Commerce%20Analysis",
   },
   {
+    name: "Real-Time Trending Topic Detector for Wikipedia ",
+    desc: "Detects trending Wikipedia articles and topics in real time, using Apache Kafka, Python, PostgreSQL, and FastAPI.",
+    tags: ["Apache Kafka", "Python", "PostgreSQL", "Data Streaming", "Real-Time Analytics", "FastAPI", "Docker", "Pydantic", "psycopg2"],
+    url: "https://github.com/isaac-rico/Analytics-Portfolio/tree/7ed286f7dfcd5d7e0b5c0325c12467a6575c781a/Real-Time%20Trending%20Topic%20Detector",
+  },
+  {
     name: "MockingBird Robotic Hand",
     desc: "Gesture-controlled robotic hand using a Raspberry Pi, PCA9685 servo controller, and real-time computer vision to replicate human hand movements via finger-angle socket transmission.",
     tags: ["Python", "MediaPipe", "OpenCV", "Raspberry Pi"],
