@@ -265,15 +265,6 @@ body { background: var(--bg); color: var(--text); }
 }
 
 .home-scroll {
-  display: grid;
-  justify-items: center;
-  gap: 0.55rem;
-  padding: 0.75rem;
-  color: var(--textMuted);
-  font-size: 0.8rem;
-}
-
-.home-scroll svg {
   color: var(--accent);
 }
 
@@ -305,17 +296,25 @@ body { background: var(--bg); color: var(--text); }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  @supports (animation-timeline: view()) {
-    .home-intro > * {
+  @supports (timeline-scope: --about-reveal) and (animation-timeline: view()) {
+    .home-sequence { timeline-scope: --about-reveal }
+
+    .home-intro {
+      position: sticky;
+      top: 0;
       animation: home-fade-out linear both;
-      animation-timeline: view();
-      animation-range: exit 0% exit 60%;
+      animation-timeline: --about-reveal;
+      animation-range: entry 0% entry 35%;
     }
 
     .home-about {
+      position: relative;
+      min-height: 75svh;
+      background: var(--bg);
+      view-timeline-name: --about-reveal;
       animation: home-fade-in linear both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 55%;
+      animation-timeline: --about-reveal;
+      animation-range: entry 15% entry 65%;
     }
 
     .home-about:focus-within { animation: none }

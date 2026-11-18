@@ -4,18 +4,17 @@ const linkedin = CONTACTS.find(contact => contact.label === "LinkedIn").href;
 
 export default function Home() {
   return (
-    <div>
+    <div className="home-sequence">
       <section className="home-intro" aria-labelledby="home-greeting">
         <h1 className="home-greeting" id="home-greeting">
           <span>Hello! I’m</span>
           Isaac Rico
         </h1>
-        <p className="home-scroll">
-          Scroll to learn more
+        <div className="home-scroll" aria-hidden="true">
           <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
             <path d="m5 9 7 7 7-7" fill="none" stroke="currentColor" strokeWidth="1.5" />
           </svg>
-        </p>
+        </div>
       </section>
       <section className="home-about" aria-labelledby="about-isaac">
         <div>
