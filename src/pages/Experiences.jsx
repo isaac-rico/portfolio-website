@@ -11,9 +11,8 @@ function ExperienceCarousel() {
   }
 
   return (
-    <section className="experience-carousel" aria-labelledby="experience-heading" aria-roledescription="carousel">
-      <div className="experience-toolbar">
-        <h3 className="section-label" id="experience-heading">Experience</h3>
+    <section className="experience-carousel" aria-label="Work history" aria-roledescription="carousel">
+      <div className="experience-toolbar experience-arrows">
         <div className="experience-controls">
           <button type="button" aria-label="Previous experience" onClick={() => step(-1)}>←</button>
           <button type="button" aria-label="Next experience" onClick={() => step(1)}>→</button>
@@ -22,7 +21,7 @@ function ExperienceCarousel() {
 
       <article className="experience-card" key={role.title} aria-labelledby="experience-role">
         <p className="experience-company">{role.company}</p>
-        <h4 id="experience-role">{role.title}</h4>
+        <h3 id="experience-role">{role.title}</h3>
         <p className="experience-date">{role.date}</p>
         <ul>
           {role.desc.map(bullet => <li key={bullet}>{bullet}</li>)}
@@ -52,13 +51,13 @@ function ExperienceCarousel() {
   );
 }
 
-export default function Resume() {
+export default function Experiences() {
   return (
     <div style={{ paddingTop: "4rem", paddingBottom: "5rem" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "3.5rem", flexWrap: "wrap", gap: "1rem" }}>
         <div>
           <p className="section-label">Background</p>
-          <h2 style={{ fontFamily: "'Lora', serif", fontSize: "2.5rem", fontWeight: 400, letterSpacing: "-0.02em", color: "var(--text)" }}>Resume</h2>
+          <h2 style={{ fontFamily: "'Lora', serif", fontSize: "2.5rem", fontWeight: 400, letterSpacing: "-0.02em", color: "var(--text)" }}>Experiences</h2>
         </div>
         <a href="/resume.pdf" download={"Isaac_Rico_Resume.pdf"} style={{ fontSize: "0.72rem", letterSpacing: "0.08em", padding: "0.65rem 1.4rem", background: "transparent", color: "var(--btnSecondaryText)", border: `1px solid var(--border)`, alignSelf: "flex-end" }}>
           Download PDF ↓
@@ -79,14 +78,19 @@ export default function Resume() {
         </div>
       </div>
 
-      <div>
-        <div className="section-divider">Skills</div>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem" }}>
-          {SKILLS.map(s => (
-            <span key={s} style={{ fontSize: "0.72rem", padding: "0.3rem 0.75rem", background: "var(--bgTag)", color: "var(--textTag)", letterSpacing: "0.02em" }}>{s}</span>
+      <section aria-labelledby="skills-heading">
+        <h3 className="section-divider" id="skills-heading">Skills</h3>
+        <div className="experience-skill-groups">
+          {SKILLS.map(({ category, items }) => (
+            <div key={category}>
+              <h4>{category}</h4>
+              <ul>
+                {items.map(skill => <li key={skill}>{skill}</li>)}
+              </ul>
+            </div>
           ))}
         </div>
-      </div>
+      </section>
     </div>
   );
 }

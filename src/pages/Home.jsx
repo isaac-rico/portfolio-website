@@ -24,7 +24,7 @@ export default function Home() {
           <details className="explore-disclosure">
             <summary>From circuits to data</summary>
             <p>I studied computer engineering at UC Irvine. I've built hardware that responds to human movement and dashboards that help teams understand how their operations run.</p>
-            <a className="explore-link" href="#resume">Explore my experience →</a>
+            <a className="explore-link" href="#experiences">Explore my experience →</a>
           </details>
           <details className="explore-disclosure">
             <summary>Current interests</summary>

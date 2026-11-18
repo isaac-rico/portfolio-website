@@ -160,10 +160,7 @@ body { background: var(--bg); color: var(--text); }
   margin-bottom: 0.75rem;
 }
 
-.experience-toolbar .section-label {
-  margin: 0;
-  font-weight: 400;
-}
+.experience-arrows { justify-content: flex-end }
 
 .experience-controls button {
   min-width: 2.75rem;
@@ -207,7 +204,7 @@ body { background: var(--bg); color: var(--text); }
   line-height: 1.5;
 }
 
-.experience-card h4 {
+.experience-card h3 {
   margin: 0.5rem 0;
   font: 400 clamp(1.5rem, 4.5vw, 2.4rem)/1.15 'Lora', serif;
 }
@@ -326,4 +323,35 @@ body { background: var(--bg); color: var(--text); }
 
 @keyframes home-fade-in {
   from { opacity: 0; transform: translateY(1rem) }
+}
+
+#skills-heading { font-weight: 400 }
+
+.experience-skill-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  gap: 1.25rem;
+}
+
+.experience-skill-groups h4 {
+  margin: 0 0 .55rem;
+  color: var(--text);
+  font-size: .78rem;
+}
+
+.experience-skill-groups ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.experience-skill-groups li {
+  padding: .3rem .75rem;
+  background: var(--bgTag);
+  color: var(--textTag);
+  font-size: .72rem;
+  letter-spacing: .02em;
 }

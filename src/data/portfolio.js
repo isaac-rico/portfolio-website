@@ -43,12 +43,11 @@ export const PROJECTS = [
 ];
 
 export const SKILLS = [
-  "Python", "SQL", "Pandas", "Scikit-Learn",
-  "Power BI", "Tableau", "Apache Superset", "PostgreSQL", "dbt", "Excel",
-  "Snowflake", "ETL", "Data Modeling", "Data Visualization",
-  "Machine Learning", "Random Forest", "Regression", "FMEA",
-  "C/C++", "Java", "JavaScript", "Git",
-  "OpenCV", "MediaPipe", "Raspberry Pi", "Arduino",
+  { category: "Programming", items: ["Python", "SQL", "C/C++"] },
+  { category: "Data engineering", items: ["Apache Kafka", "dbt", "Snowflake", "BigQuery", "PostgreSQL", "FastAPI", "Docker"] },
+  { category: "Analytics & reporting", items: ["Power BI", "Apache Superset", "Google Data Studio"] },
+  { category: "Applied ML & computer vision", items: ["scikit-learn", "Natural language processing", "OpenCV", "MediaPipe"] },
+  { category: "Embedded systems & robotics", items: ["Raspberry Pi", "Arduino", "Sensor integration", "Servo control"] },
 ];
 
 export const EXPERIENCE = [

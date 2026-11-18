@@ -1,14 +1,15 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
-import Resume from "./pages/Resume";
+import Experiences from "./pages/Experiences";
 import Contact from "./pages/Contact";
 
-const pages = { Home, Projects, Resume, Contact };
+const pages = { Home, Projects, Experiences, Contact };
 const pageNames = Object.keys(pages);
 
 function currentPage() {
   const hash = window.location.hash.slice(1).toLowerCase();
+  if (hash === "resume") return "Experiences";
   return pageNames.find(name => name.toLowerCase() === hash) ?? "Home";
 }
 
