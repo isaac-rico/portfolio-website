@@ -273,8 +273,7 @@ body { background: var(--bg); color: var(--text); }
   font-size: 0.8rem;
 }
 
-.home-scroll svg,
-.home-scroll:hover {
+.home-scroll svg {
   color: var(--accent);
 }
 
@@ -285,13 +284,6 @@ body { background: var(--bg); color: var(--text); }
   gap: clamp(2rem, 6vw, 4rem);
   border-top: 1px solid var(--border);
   padding-block: clamp(3rem, 8vw, 5rem);
-}
-
-.home-back {
-  margin-bottom: 1.25rem;
-  min-height: 44px;
-  color: var(--accent);
-  font-size: 0.8rem;
 }
 
 .home-portrait {
@@ -310,4 +302,30 @@ body { background: var(--bg); color: var(--text); }
   .home-about {
     grid-template-columns: minmax(0, 1fr);
   }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .home-intro > * {
+      animation: home-fade-out linear both;
+      animation-timeline: view();
+      animation-range: exit 0% exit 60%;
+    }
+
+    .home-about {
+      animation: home-fade-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 55%;
+    }
+
+    .home-about:focus-within { animation: none }
+  }
+}
+
+@keyframes home-fade-out {
+  to { opacity: 0 }
+}
+
+@keyframes home-fade-in {
+  from { opacity: 0; transform: translateY(1rem) }
 }
