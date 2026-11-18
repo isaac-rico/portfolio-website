@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=IBM+Plex+Mono:wght@300;400;500&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'IBM Plex Mono', monospace;  }
+a { text-decoration: none; color: inherit; }
+button { font-family: 'IBM Plex Mono', monospace; cursor: pointer; border: none; background: none; }
+
+:root {
+  --bg: #111110;
+  --bgCard: #1A1A18;
+  --bgHover: #222220;
+  --bgTag: #252523;
+  --bgStat: #1A1A18;
+  --border: #2E2E2B;
+  --text: #E8E7E3;
+  --textMuted: #999;
+  --textFaint: #d9d9d9;
+  --textLabel: #555;
+  --textTag: #AAA;
+  --accent: #74c4e9;
+  --navActive: #E8E7E3;
+  --btnPrimaryBg: #E8E7E3;
+  --btnPrimaryText: #111110;
+  --btnSecondaryText: #E8E7E3;
+  --footerText: #3A3A38;
+  --arrowColor: #555;
+}
+
+:root[data-theme="light"] {
+  --bg: #F9F8F5;
+  --bgCard: #F9F8F5;
+  --bgHover: #EEEDE9;
+  --bgTag: #EEEDE9;
+  --bgStat: #F9F8F5;
+  --border: #080808;
+  --text: #1A1A1A;
+  --textMuted: #666;
+  --textFaint: #999;
+  --textLabel: #AAA;
+  --textTag: #555;
+  --accent: #1e333d;
+  --navActive: #1A1A1A;
+  --btnPrimaryBg: #1A1A1A;
+  --btnPrimaryText: #F9F8F5;
+  --btnSecondaryText: #1A1A1A;
+  --footerText: #BBB;
+  --arrowColor: #BBB;
+}
+body { background: var(--bg); color: var(--text); }
+.section-label, .section-divider { text-transform: uppercase; letter-spacing: .15em; color: var(--accent); }
+.section-label { font-size: .68rem; margin-bottom: .75rem; }
+.section-divider { font-size: .65rem; margin-bottom: 1.25rem; padding-bottom: .5rem; border-bottom: .5px solid var(--border); }
+
+.site-main {
+  flex: 1;
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+  padding-inline: clamp(1.25rem, 6vw, 3rem);
+}
+
+:where(a, button, summary):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.explore-section {
+  margin-top: clamp(3rem, 8vw, 5rem);
+}
+
+.explore-heading {
+  margin-bottom: 1.25rem;
+  font: 400 clamp(1.65rem, 4vw, 2.3rem) 'Lora', serif;
+  letter-spacing: -0.02em;
+}
+
+.explore-disclosure {
+  border-top: 1px solid var(--border);
+  padding: 1rem 0;
+}
+
+.explore-disclosure:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.explore-disclosure summary {
+  cursor: pointer;
+  color: var(--text);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.explore-disclosure summary::marker {
+  color: var(--accent);
+}
+
+.explore-disclosure p {
+  max-width: 62ch;
+  margin-top: 0.75rem;
+  color: var(--textMuted);
+  font-size: 0.8rem;
+  line-height: 1.75;
+}
+
+.explore-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: var(--accent);
+  font-size: 0.75rem;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-filter {
+  padding: 0.55rem 0.85rem;
+  border: 1px solid var(--border);
+  background: var(--bgCard);
+  color: var(--text);
+  font-size: 0.75rem;
+}
+
+.project-filter:hover {
+  background: var(--bgHover);
+}
+
+.project-filter[aria-pressed="true"] {
+  background: var(--btnPrimaryBg);
+  color: var(--btnPrimaryText);
+}
+
+.project-count {
+  margin: 0.75rem 0 1.25rem;
+  color: var(--textMuted);
+  font-size: 0.75rem;
+}
+
+.project-disclosure {
+  margin-top: auto;
+}
+
+.experience-carousel {
+  margin-bottom: 3rem;
+}
+
+.experience-toolbar,
+.experience-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.experience-toolbar {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.experience-toolbar .section-label {
+  margin: 0;
+  font-weight: 400;
+}
+
+.experience-controls button {
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: var(--bgCard);
+}
+
+.experience-controls button:hover {
+  background: var(--bgHover);
+}
+
+.experience-controls button[aria-pressed="true"] {
+  background: var(--btnPrimaryBg);
+  color: var(--btnPrimaryText);
+}
+
+.experience-card {
+  padding: clamp(1.25rem, 5vw, 2.75rem);
+  min-height: 20rem;
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--accent);
+  background: var(--bgCard);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .experience-card {
+    animation: experience-enter 200ms ease-out;
+  }
+
+  @keyframes experience-enter {
+    from { opacity: 0.65; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+.experience-company {
+  color: var(--accent);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.experience-card h4 {
+  margin: 0.5rem 0;
+  font: 400 clamp(1.5rem, 4.5vw, 2.4rem)/1.15 'Lora', serif;
+}
+
+.experience-date,
+.experience-footer {
+  color: var(--textMuted);
+  font-size: 0.75rem;
+}
+
+.experience-card ul {
+  margin-top: 1.25rem;
+  padding-inline-start: 1.2rem;
+  color: var(--textMuted);
+  font-size: 0.85rem;
+  line-height: 1.65;
+}
+
+.experience-card li + li {
+  margin-top: 0.65rem;
+}
+
+.experience-footer {
+  margin-top: 0.75rem;
+}
+
+.experience-announcement {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.home-intro {
+  min-height: calc(100svh - 5rem);
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: clamp(2.5rem, 9svh, 5rem);
+  padding-block: 3rem;
+  text-align: center;
+}
+
+.home-greeting {
+  font: 400 clamp(3rem, 11vw, 7rem)/1.05 'Lora', serif;
+  letter-spacing: -0.04em;
+}
+
+.home-greeting span {
+  display: block;
+  margin-bottom: 0.3em;
+  font-size: 0.55em;
+}
+
+.home-scroll {
+  display: grid;
+  justify-items: center;
+  gap: 0.55rem;
+  padding: 0.75rem;
+  color: var(--textMuted);
+  font-size: 0.8rem;
+}
+
+.home-scroll svg,
+.home-scroll:hover {
+  color: var(--accent);
+}
+
+.home-about {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 200px);
+  align-items: start;
+  gap: clamp(2rem, 6vw, 4rem);
+  border-top: 1px solid var(--border);
+  padding-block: clamp(3rem, 8vw, 5rem);
+}
+
+.home-back {
+  margin-bottom: 1.25rem;
+  min-height: 44px;
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+
+.home-portrait {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  padding: 8px;
+  background: var(--bgCard);
+}
+
+@media (max-width: 600px) {
+  .home-about {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
